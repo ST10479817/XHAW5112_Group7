@@ -1,0 +1,159 @@
+<html lang="en">
+<head>
+    <!-- Set document character encoding to UTF-8 to ensure correct display of characters -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script>
+function calculateTotal() {
+    // Select all checked courses
+    const selectedCourses = document.querySelectorAll('input[name="course"]:checked');
+
+    // If no courses selected
+    if (selectedCourses.length === 0) {
+        alert("Please select at least one course.");
+        return;
+    }
+
+    // Calculate base total
+    let total = 0;
+    selectedCourses.forEach(course => {
+        total += parseFloat(course.getAttribute('data-fee'));
+    });
+
+    // Apply discounts based on number of courses
+    let discount = 0;
+    if (selectedCourses.length === 2) {
+        discount = 0.05; // 5%
+    } else if (selectedCourses.length === 3) {
+        discount = 0.10; // 10%
+    } else if (selectedCourses.length >= 4) {
+        discount = 0.15; // 15%
+    }
+
+    const discountAmount = total * discount;
+    const finalTotal = total - discountAmount;
+
+    // Create summary text
+    let summary = `
+        <h2>Quote Summary</h2>
+        <p>Number of Courses Selected: ${selectedCourses.length}</p>
+        <ul>
+    `;
+
+    selectedCourses.forEach(course => {
+        summary += `<li>${course.value} - R${course.getAttribute('data-fee')}</li>`;
+    });
+
+    summary += `
+        </ul>
+        <p><strong>Subtotal:</strong> R${total.toFixed(2)}</p>
+        <p><strong>Discount:</strong> R${discountAmount.toFixed(2)}</p>
+        <p><strong>Total Payable:</strong> R${finalTotal.toFixed(2)}</p>
+    `;
+
+    // Display the summary in the quote_summary div
+    document.querySelector('.quote_summary').innerHTML = summary;
+}
+</script>
+
+        <!-- Wrapper to contain the whole page -->
+    <div id="wrapper">
+        <header id="mainHeader">
+            <div class="headerContent">
+                <!-- Company Logo --> 
+                <div id="logo">
+                    <img src="_images/logo2.png" alt="Housing Repairs Logo" width="150" height="150">
+                </div>
+                <!-- Navigation Bar -->
+                <div class="navBar">
+                    <ul>
+                        <li class="navigation_style" ><a href="index.html"><img src="_images/home_icon.png" alt="home_icon" class="icon">Home</a></li>
+                        
+        <li class="navigation_style">
+          <a href="#" ><img src="_images/book_icon.png" alt="Housing Repairs Logo" class="icon">Services ▾</a>
+          <ul class="dropdown">
+            <li class="dropdown_style"><a href="6_month_courses.html">6-Month Courses</a></li>
+            <li class="dropdown_style"><a href="6_week_courses.html">6-Week Courses</a></li>
+          </ul>
+        </li>
+
+        
+
+
+                        <li class="navigation_style" id="current_page"><a href="calculate_fees.html"><img src="_images/calculator_icon.png" alt="Housing Repairs Logo" class="icon">Calculate Fees</a></li>
+                        <li class="navigation_style"><a href="contact.html"><img src="_images/phone_icon.png" alt="Housing Repairs Logo" class="icon" >Contact Us</a></li>    
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+
+        <main>
+  <div class="heading">
+    <h1>Calculate Course Fees</h1>
+  </div>
+
+  <div class="information">
+    <p class="first">Select courses and get an instant quote.</p>
+  </div>
+
+  <!-- Calculator + Discount layout -->
+  <div class="calculator-section">
+    
+    <!-- Left: Course selection -->
+    <div class="select_courses">
+      <h2>Select Courses:</h2>
+      <form id="courseForm">
+        <h2>6-Month Courses (R1500 each):</h2>
+        <label><input type="checkbox" name="course" value="First Aid" data-fee="1500"> First Aid R1500</label><br>
+        <label><input type="checkbox" name="course" value="Sewing" data-fee="1500"> Sewing R1500</label><br>
+        <label><input type="checkbox" name="course" value="Landscaping" data-fee="1500"> Landscaping R1500</label><br>
+        <label><input type="checkbox" name="course" value="Life Skills" data-fee="1500"> Life Skills R1500</label><br>
+
+        <h2>3-Month Courses (R750 each):</h2>
+        <label><input type="checkbox" name="course" value="Child Minding" data-fee="750"> Child Minding R750</label><br>
+        <label><input type="checkbox" name="course" value="Cooking" data-fee="750"> Cooking R750</label><br>
+        <label><input type="checkbox" name="course" value="Garden Maintenance" data-fee="750"> Garden Maintenance R750</label><br>
+
+        <button type="button" onclick="calculateTotal()">Calculate Total</button>
+      </form>
+    </div>
+
+    <!-- Right: Discounts + Quote -->
+    <div class="right-side">
+      <div class="Multi-Course-Discount">
+        <h2>Multi-Course Discount:</h2>
+        <p>The more courses you select, the more you save. Choose multiple courses to maximize your savings.</p>
+<div id="discountInfo">
+  <div id="oneCourse">1 Course<br>No discount</div>
+  <div id="twoCourses">2 Courses<br>5% OFF</div>
+  <div id="threeCourses">3 Courses<br>10% OFF</div>
+  <div id="fourCourses">4+ Courses<br>15% OFF</div>
+</div>
+
+      </div>
+
+      <div class="quote_summary"></div>
+    </div>
+
+  </div> <!-- End calculator-section -->
+</main>
+  <footer>
+                <div class="footerContainer">
+                
+            </div>
+            <div class="footerBottom">
+                <div class="footerColumn">
+                    <img src="_images/logo.png" width="25" height="25">
+                    <p>Empowering the Nation</p>
+                </div>  
+               
+                <p>&copy; 2022-2025 Empowering the Nation. All rights reserved.</p>
+            </div>
+  </footer>
+</body>
+</html>

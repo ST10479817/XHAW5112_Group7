@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +8,21 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <script>
+function addToQuote(courseName) {
+  // Get existing selections from localStorage (or start a new list)
+  let selectedCourses = JSON.parse(localStorage.getItem("selectedCourses")) || [];
+
+  // Check if it's already added
+  if (!selectedCourses.includes(courseName)) {
+    selectedCourses.push(courseName);
+    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
+    alert(courseName + " has been added to your quote list!");
+  } else {
+    alert(courseName + " is already in your quote list.");
+  }
+}
+</script>
     <div id="wrapper">
         <header id="mainHeader">
             <div class="headerContent">
@@ -54,7 +70,7 @@
                         <li>Respiratory distress e.g., Choking, blocked airway</li>
                     
                     <div class="button">
-                        <a href="contact.html" class="btn">Add To Quote</a>
+                        <button class="btn" onclick="addToQuote('First Aid')">Add To Quote</button>
                     </div>
                 </div>
                 <div class="imageNextToInormation">
@@ -66,20 +82,20 @@
                     <div class="informationAboveButton">
                     <p class="first">6 months (12 weeks)</p>
                     
-                </div>
+                    </div>
                     <div class="belowTheInformation">
                         <a href="6_month_courses.html" class="btn">Back to Courses</a>
                     </div>
-                    </div>
+                </div>
                     
-                <div class="information3">
+                <div class="information2">
                     <div class="informationAboveButton">
-                    <p class="second">Fees: R1500</p>
+                    <p class="first">Fees: R1500</p>
                     </div>
                 
                     <div class="belowTheInformation">
                         <a href="calculate_fees.html" class="btn">See Quote Page</a>
-                    </div>
+                </div>
             </div>
                     
                 
@@ -90,14 +106,13 @@
             
                 
         </main>
-                <!-- Footer -->
         <footer id="mainFooter">
             <div class="footerContainer">
                 
             </div>
             <div class="footerBottom">
                 <div class="footerColumn">
-                    <img src="_images/logo.png" width="50" height="50">
+                    <img src="_images/logo.png" width="25" height="25">
                     <p>Empowering the Nation</p>
                 </div>  
                

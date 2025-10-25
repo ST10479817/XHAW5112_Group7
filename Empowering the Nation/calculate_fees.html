@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,7 +8,30 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  
     <script>
+window.onload = function() {
+  const savedCourses = JSON.parse(localStorage.getItem("selectedCourses")) || [];
+  savedCourses.forEach(courseName => {
+    const checkbox = document.querySelector(`input[name="course"][value="${courseName}"]`);
+    if (checkbox) {
+      checkbox.checked = true;
+    }
+  });
+};
+
+      function clearSelection() {
+    // Uncheck all checkboxes
+    const checkboxes = document.querySelectorAll('input[name="course"]');
+    checkboxes.forEach(box => box.checked = false);
+    localStorage.removeItem("selectedCourses");
+
+    // Reset the quote summary text
+    document.querySelector('.quote_summary').innerHTML = `
+        <p>Please select courses to see pricing and press the <strong>Calculate</strong> button.</p>
+        <p>Select courses above to calculate fees.</p>
+    `;
+}
 function calculateTotal() {
     // Select all checked courses
     const selectedCourses = document.querySelectorAll('input[name="course"]:checked');
@@ -41,15 +65,15 @@ function calculateTotal() {
     let summary = `
         <h2>Quote Summary</h2>
         <p>Number of Courses Selected: ${selectedCourses.length}</p>
-        <ul>
+        
     `;
 
     selectedCourses.forEach(course => {
-        summary += `<li>${course.value} - R${course.getAttribute('data-fee')}</li>`;
+        summary += `<ol>${course.value} - R${course.getAttribute('data-fee')}</ol>`;
     });
 
     summary += `
-        </ul>
+        
         <p><strong>Subtotal:</strong> R${total.toFixed(2)}</p>
         <p><strong>Discount:</strong> R${discountAmount.toFixed(2)}</p>
         <p><strong>Total Payable:</strong> R${finalTotal.toFixed(2)}</p>
@@ -57,6 +81,29 @@ function calculateTotal() {
 
     // Display the summary in the quote_summary div
     document.querySelector('.quote_summary').innerHTML = summary;
+}
+
+
+function requestQuote() {
+    const name = document.getElementById('fullName').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const summary = document.querySelector('.quote_summary').innerText;
+
+    if (!name || !phone || !email) {
+        alert("Please fill in all contact fields before requesting a quote.");
+        return;
+    }
+
+    if (summary.includes("Please select courses")) {
+        alert("Please calculate your quote before submitting your request.");
+        return;
+    }
+
+    alert(`Thank you, ${name}! Your quote request has been submitted.\n\nWe'll contact you soon at ${email} or ${phone}.`);
+    
+    // Optionally clear inputs
+    document.getElementById('quoteForm').reset();
 }
 </script>
 
@@ -97,14 +144,15 @@ function calculateTotal() {
     <h1>Calculate Course Fees</h1>
   </div>
 
-  <div class="information">
-    <p class="first">Select courses and get an instant quote.</p>
+  <div class="information01">
+    <p class="background_color">Select courses and get an instant quote.</p>
   </div>
 
   <!-- Calculator + Discount layout -->
   <div class="calculator-section">
     
     <!-- Left: Course selection -->
+     <div class="right-side">
     <div class="select_courses">
       <h2>Select Courses:</h2>
       <form id="courseForm">
@@ -118,10 +166,29 @@ function calculateTotal() {
         <label><input type="checkbox" name="course" value="Child Minding" data-fee="750"> Child Minding R750</label><br>
         <label><input type="checkbox" name="course" value="Cooking" data-fee="750"> Cooking R750</label><br>
         <label><input type="checkbox" name="course" value="Garden Maintenance" data-fee="750"> Garden Maintenance R750</label><br>
-
-        <button type="button" onclick="calculateTotal()">Calculate Total</button>
+        <div class="same_line">
+        <button type="button" class="calculate-btn" onclick="calculateTotal()">Calculate Total</button>
+        <button type="button" class="clear-btn" onclick="clearSelection()">Clear Selection</button>
+        </div>
       </form>
     </div>
+      <div class="contact_info">
+  <h2>Contact Information</h2>
+  <form id="quoteForm">
+    <label for="fullName">Full Name:</label><br>
+    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required><br><br>
+
+    <label for="phone">Phone Number:</label><br>
+    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+
+    <label for="email">Email Address:</label><br>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+
+    <button type="button" class="request-btn" onclick="requestQuote()">Request Quote</button>
+  </form>
+</div>
+</div>
+
 
     <!-- Right: Discounts + Quote -->
     <div class="right-side">
@@ -137,13 +204,16 @@ function calculateTotal() {
 
       </div>
 
-      <div class="quote_summary"></div>
+      <div class="quote_summary"><p>Please select courses to see pricing and press the <strong>Calculate</strong> button.</p>
+  <p>Select courses above to calculate fees.</p></div>
     </div>
 
   </div> <!-- End calculator-section -->
+
+
 </main>
-  <footer>
-                <div class="footerContainer">
+        <footer id="mainFooter">
+            <div class="footerContainer">
                 
             </div>
             <div class="footerBottom">
@@ -154,6 +224,6 @@ function calculateTotal() {
                
                 <p>&copy; 2022-2025 Empowering the Nation. All rights reserved.</p>
             </div>
-  </footer>
+        </footer>
 </body>
 </html>

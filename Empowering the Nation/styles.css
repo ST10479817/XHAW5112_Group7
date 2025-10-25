@@ -1,0 +1,1043 @@
+/* CSS reset and Base Styles*/
+* {
+  margin: 0;
+  padding: 0;
+box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif; /* Typography Styles */
+  background: #f4f4f4;
+}
+
+
+
+/* Layout Structure */
+
+/* ===== Header Base ===== */
+#mainHeader {
+  background: #f4f4f4;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+}
+.headerContent {
+  display: flex;
+   /* pushes all content (logo + nav) to the right */
+  align-items: center;
+  padding: 40 40px;
+
+  gap: 20px; /* space between logo and nav */
+    justify-content: center; /* space between logo and nav */
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+#logo img {
+  display: block;
+  width: 100px;
+    height: auto;
+}
+
+/* ===============================
+   FORM ELEMENT STYLING
+================================== */
+
+/* Checkbox container labels */
+.select_courses label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  padding: 8px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  background-color: #fff;
+}
+
+.select_courses h2 {
+  background-color: #fff;
+}
+
+.select_courses label:hover {
+  color: #2eb872; /* Hover color for text */
+}
+
+/* Custom checkboxes */
+.select_courses input[type="checkbox"] {
+  /* Hide default checkbox */
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 2px solid #35be80;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.clear-btn {
+  margin-left: 245px;
+}
+.calculate-btn {
+  margin-right: 45px;
+}
+.same_line {
+  display: flex;              /* puts buttons in a row */
+  justify-content: flex-start; /* aligns them to the left (use center or space-between if you prefer) */
+  align-items: center;         /* vertically centers them */
+  gap: 15px;                   /* space between buttons */
+  margin-top: 15px;   
+  background-color: #ffffff;         /* optional spacing from content above */
+}
+.select_courses input[type="checkbox"]:checked {
+  background-color: #35be80;
+  border-color: #2eb872;
+}
+
+.select_courses input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 0;
+  left: 5px;
+}
+
+/* Button styling */
+button {
+  background-color: #35be80;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(53, 190, 128, 0.3);
+}
+
+button:hover {
+  background-color: #2eb872;
+  transform: scale(1.03);
+  box-shadow: 0 6px 10px rgba(53, 190, 128, 0.4);
+}
+/* ===== Add margins to main page content ===== */
+main {
+  background: #f4f4f4;
+  margin-left: 80px;   /* left margin */
+  margin-right: 80px;  /* right margin */
+  padding-bottom: 50px;
+}
+
+/* ===== Quote Summary Styling ===== */
+.quote_summary {
+  background-color: #fff;
+  border: 2px solid #35be80;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  animation: fadeIn 0.4s ease-in;
+}
+
+/* List styling for selected courses */
+.quote_summary ul {
+  margin-left: 25px;     /* indent list items */
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.quote_summary ol {
+  margin-bottom: 6px;
+  background-color: #fff;
+  
+  
+}
+.quote_summary h2 {
+  background-color: #fff;
+}
+.quote_summary p {
+  background-color: #fff;
+  font-weight: bold;
+}
+
+/* Highlight key totals */
+.quote_summary strong {
+  color: #2eb872;
+  font-weight: bold;
+  background-color: #fff;
+}
+/* ===== Contact Info Section ===== */
+.contact_info {
+  background-color: #fff;
+  max-width: 750px;
+  border: 2px solid #35be80;
+  border-radius: 12px;
+  padding: 25px;
+  margin-top: 20px;
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  animation: fadeIn 0.4s ease-in;
+  text-align: center;
+}
+
+.contact_info h2 {
+  color: #2eb872;
+  margin-bottom: 15px;
+  font-size: 24px;
+  background-color: #fff;
+}
+
+
+
+.contact_info input[type="text"],
+.contact_info input[type="tel"],
+.contact_info input[type="email"] {
+  width: 100%;
+  max-width: 350px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: #fff;
+}
+#quoteForm {
+  background-color: #fff;
+}
+#quoteForm label{
+  background-color: #fff;
+}
+
+.contact_info input:focus {
+  border-color: #35be80;
+  outline: none;
+  box-shadow: 0 0 5px rgba(53, 190, 128, 0.5);
+}
+
+/* Request Quote Button */
+.request-btn {
+  background-color: #35be80;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(53, 190, 128, 0.3);
+}
+
+.request-btn:hover {
+  background-color: #2eb872;
+  transform: scale(1.03);
+  box-shadow: 0 6px 10px rgba(53, 190, 128, 0.4);
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+button:active {
+  transform: scale(0.97);
+  box-shadow: 0 2px 4px rgba(53, 190, 128, 0.2);
+}
+
+
+/* ===== Navigation Bar ===== */
+.navBar {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  
+
+}
+
+ul{
+    list-style: none;
+    background: #ffffff;
+      display: flex;
+    justify-content: flex-end;  /* aligns menu to the right */
+  white-space: nowrap; 
+
+
+
+  
+}
+
+.buttonDetails {
+  background-color: #35be80;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(53, 190, 128, 0.3);
+}/*dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd*/
+
+
+ul li{
+    display: inline-block;
+    position: relative;
+    
+    
+
+    
+}
+ul li a{
+    display: inline-block;
+    padding: 10px 25px;
+    color: #35be80;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    white-space: nowrap;
+    background-color: #ffffff;
+      display: flex;                /* Align icon + text side-by-side */
+  align-items: center;          /* Vertically center them */
+  justify-content: center;      /* Centers contents horizontally */
+  gap: 10px;    
+    
+    
+    
+    
+    
+}
+ul li ul.dropdown li{
+    display: block;
+    
+}
+ul li ul.dropdown{
+  width: 100%; /* Match parent li width */
+  background: #f9f9f9;
+  position: absolute;
+  z-index: 999;
+  display: none;
+  
+}
+ul li.dropdown_style{
+    border-top: 2px solid #35be80;
+    border-bottom: 2px solid #35be80;
+    border-right: 2px solid #35be80;
+    border-left: 2px solid #35be80;
+    font-size: 3px;
+    
+    
+  
+    
+}
+
+#mainFooter{
+
+        border-top: 2px solid #35be80;
+        background-color: #fff;
+        
+
+  
+}
+
+.footerBottom{
+  padding: 20px 20px;
+  background-color: #fff;
+  
+
+}
+.footerBottom p{
+  font-size: 25px;
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #fff;
+
+  
+}
+.footerColumn {
+  display: flex;
+  align-items: center;   /* vertically centers text & image */
+  justify-content: center; /* centers everything horizontally */
+  gap: 20px; /* space between image and text */
+  margin-bottom: 20px;
+  background-color: #fff;
+}
+
+.footerColumn img {
+  width: 50px;   /* adjust size as needed */
+  height: auto;
+  border-radius: 50px;
+}
+
+.footerColumn p {
+  margin: 0;
+  font-size: 30px;
+  color: #2eb872; /* or your footer text color */
+  font-weight: bold;
+}
+
+ul li.navigation_style{
+        border-top: 2px solid #35be80;
+    border-bottom: 2px solid #35be80;
+    border-right: 2px solid #35be80;
+    border-left: 2px solid #35be80;
+
+}
+ul li ul.dropdown li a{
+      padding: 10px 20px;
+  text-align: left;         /* dropdown text alignment */
+  font-size: 16px;          /* smaller dropdown text */
+  color: #2eb872;
+  
+}
+ul li ul.dropdown li a:hover{
+        /* smaller dropdown text */
+  color: #ffffff;
+  background: #2eb872;
+
+}
+ul li a:hover{
+    background: #2eb872;
+        color: #ffffff;
+        border-bottom: 2px solid #35be80;
+
+        
+        
+        
+}
+#current_page a {
+  background-color: #2eb872; /* Green background */
+  color: #fff;               /* White text */
+}
+#not_current_page a {
+  background-color: #ffffff; /* Green background */
+  color: #000000;               /* White text */
+}
+
+#current_page a img {
+  filter: brightness(0) invert(1); /* Makes icon white */
+}
+
+
+ul li:hover ul.dropdown{
+    display: block;
+    
+}
+ul li:hover ul.dropdown a:hover{
+    background: #2eb872;
+    display: block;
+    
+}
+
+
+.icon {
+  background-color: transparent;
+  width: 40px;
+  height: 40px;
+     /* default background */
+      /* optional rounded corners */
+}
+
+/* When you hover over the icon */
+.campus-card {
+  display: flex;
+  justify-content: space-between; /* pushes info left, map right */
+  align-items: flex-start;
+  gap: 30px;                      /* space between info and map */
+  background-color: #fff;
+  border: 2px solid #35be80;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 40px;
+  flex-wrap: wrap; /* keeps layout responsive for smaller screens */
+}
+
+
+.campus-info {
+  flex: 1;
+  min-width: 280px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;  /* centers vertically */
+  align-items: center;      /* centers horizontally */
+  text-align: center;
+}
+
+
+
+.campus-info h2{
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 40px;
+}
+
+.campus-info p{
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+.campus-info strong{
+  background-color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 25px;
+}
+
+
+.maps {
+  flex: 1;
+  min-width: 350px;
+  
+}
+
+.maps iframe {
+  width: 100%;
+  height: 350px;
+  border-radius: 12px;
+  border: 2px solid #2eb872;
+}
+
+
+
+/* ===== Main Content ===== */
+main {
+
+/* Ensure it takes full viewport height */
+  background: #f4f4f4;
+}
+.heading h1{
+      border: 3px solid #35be80;   /* green border */
+  border-radius: 15px;          /* makes edges rounded */
+  padding: 10px 20px;           /* space inside border */
+  display: inline-block;        /* keeps border tight around text */
+  background-color: #ffffff;    /* optional - background inside border */
+  color: #35be80;               /* heading text color */
+  text-align: center; 
+  font-size: 70px;     /* center vertically */
+           /* full page height */     /* heading text size */
+}
+.heading{
+    text-align: center;  /* center horizontally */
+    margin-bottom: 40px; /* space below heading */
+}
+.subheading{
+  display: flex;                /* puts logo and text side by side */
+          /* vertically align them */
+       /* centers the pair horizontally on the page */
+  gap: 50px;                    /* space between logo and text */
+  margin-top: 30px; 
+  padding: 0px 30px;
+}
+.subheading2 {
+    display: flex;                /* puts logo and text side by side */
+          /* vertically align them */
+       /* centers the pair horizontally on the page */
+  gap: 50px;                    /* space between logo and text */
+  margin-top: 30px; 
+  padding: 0px 30px;
+}
+
+.subheading img{
+  display: block;
+  width: 300px;
+    height: auto;
+      width: 400px;
+  height: auto;
+  border-radius: 12px;
+  border: 3px solid #35be80;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.subheading2 img{
+  display: block;
+  width: 300px;
+    height: auto;
+      width: 400px;
+  height: auto;
+  border-radius: 100%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.information {
+      border: 3px solid #35be80;   /* green border */
+  border-radius: 15px;          /* makes edges rounded */
+  padding: 15px 15px;           /* space inside border */
+  display: inline-block;        /* keeps border tight around text */
+  background: #ffffff;    /* optional - background inside border */
+  color: #000000;
+  font-size: 30px;                /* heading text color */
+  
+           /* full page height */     /* heading text size */
+}
+
+
+/* Container for all the boxes */
+#discountInfo {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  flex-wrap: wrap; /* allows wrapping on small screens */
+  margin: 40px 80px;
+  background-color: #fff;
+}
+
+/* Shared box styles */
+#discountInfo div {
+  flex: 1;
+  min-width: 150px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px;
+  border-radius: 12px;
+  color: #000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Individual colors */
+#oneCourse {
+  background-color: #fff;
+  border: 2px solid #ccc;
+}
+
+#twoCourses {
+  background-color: #adefab; /* green */
+  color: #fff;
+}
+
+#threeCourses {
+  background-color: #94e1ff; /* blue */
+  color: #fff;
+}
+
+#fourCourses {
+  background-color: #f9f26a; /* yellow */
+  color: #000;
+}
+
+/* Responsive styling */
+@media (max-width: 800px) {
+  #discountInfo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #discountInfo div {
+    width: 80%;
+  }
+}
+.firstinformation{
+  margin-top: 25px;
+
+    text-align: left;
+    margin-bottom: 150px; /* space below heading */
+    background-color:#ffffff;
+}
+.secondinformation{
+    text-align: right;
+    background-color: #ffffff;
+    
+    /* space below heading */
+}
+
+
+
+
+
+
+
+.first{
+  margin-top: 25px;
+
+    text-align: left;
+    margin-bottom: 150px; /* space below heading */
+    background-color:#f4f4f4;
+}
+.second{
+    text-align: right;
+    background-color: #f4f4f4;
+    
+    /* space below heading */
+}
+.information2 h2{
+ color: #2eb872;
+  font-size: 35px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.information2 {
+               /* space inside border */
+  display: inline-block;        /* keeps border tight around text */
+  /* optional - background inside border */
+  color: #000000;
+  font-size: 25px;
+  text-align: left;
+  justify-content: left; 
+  
+                  /* heading text color */
+  
+           /* full page height */     /* heading text size */
+}
+.information2 li {
+  margin-bottom: 8px;
+  font-size: 20px;
+  color: #000;
+  text-align: left;
+  justify-content: left; 
+  
+  
+}
+.background_color{
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.information2 .button {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #35be80;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 80px;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #2eb872;
+}
+
+
+
+/* ===============================
+   LAYOUT: Calculator + Discount Section
+================================== */
+.calculator-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px;
+  margin-top: 30px;
+  
+}
+#courseForm {
+  background-color: #fff;
+}
+
+/* Left side (course selection) */
+.select_courses {
+  flex: 1;
+  background-color: #fff;
+  border: 2px solid #35be80;
+  border-radius: 12px;
+  padding: 25px;
+  
+}
+
+/* Right side (discount + quote) */
+.right-side {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Discount info box */
+.Multi-Course-Discount {
+  background-color: #fff;
+  border: 2px solid #35be80;
+  border-radius: 12px;
+  padding: 25px;
+  background: #fff;
+}
+.Multi-Course-Discount h2,p{
+  background-color: #fff;
+}
+
+/* Quote summary box */
+.quote_summary {
+  background-color: #fff;
+  border: 2px solid #35be80;
+  border-radius: 12px;
+  padding: 20px;
+  animation: fadeIn 0.4s ease-in;
+}
+
+
+/*zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz*/
+/* ===============================
+   COURSE DETAILS PAGE (First Aid)
+================================== */
+
+/* Main section container */
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 200px;
+  margin: 5px 70px;
+  flex-wrap: wrap; /* responsive for smaller screens */
+  border-radius: 12px;
+  
+  
+}
+/*mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm*/
+
+.informationNextToImage h2 {
+  color: #2eb872;
+  font-size: 35px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  margin-top: 20px;
+  background-color: #ffffff; 
+  
+  
+
+}
+
+.heading2 h1{
+      border: 3px solid #35be80;   /* green border */
+  border-radius: 30px;          /* makes edges rounded */
+  padding: 11px 28px;           /* space inside border */
+  display: inline-block;        /* keeps border tight around text */
+  background-color: #ffffff;    /* option,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,al - background inside border */
+  color: #35be80;               /* heading text color */
+ 
+  font-size: 70px;     /* center vertically */
+           /* full page height */     /* heading text size */
+}
+.heading2{
+    text-align: center;  /* center horizontally */
+    margin-bottom: 5px; /* space below heading */
+}
+.informationNextToImage p {
+  margin-bottom: 20px;
+  margin-left: 12px;
+  border-radius: 12px;
+  font-size: 20px;
+  background-color: #ffffff; 
+  
+  
+}
+.informationNextToImage {
+border: 3px solid #35be80;
+  border-radius: 12px;
+  background: #f4f4f4;
+  width: 400px;
+  height: 450px;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff; 
+
+ 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.informationNextToImage ol {
+  margin-left: 25px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+    align-items: left;
+  text-align: left;
+  font-size: 20px;
+  background-color: #ffffff; 
+  
+  
+}
+
+.informationNextToImage li {
+  
+  border-radius: 12px;
+    margin-left: 25px;
+  margin-bottom: 10px;
+  border-radius: 12px;
+    align-items: left;
+  text-align: left;
+  font-size: 20px;
+  background-color: #ffffff; 
+  
+  
+}
+
+.informationNextToImage .button {
+  margin-top: 50px;
+  text-align: center;
+  border-radius: 12px;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+    width: auto;
+  height: 0px;
+}
+
+/* Image container (right side) */
+.imageNextToInormation img {
+  width: 400px;
+  height: 450px;
+  border-radius: 12px;
+  border: 3px solid #35be80;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================
+   SECOND SECTION (duration + fee)
+================================== */
+.section2 {
+ 
+  
+  padding: 40px;
+display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin: 5px 100px;
+  flex-wrap: wrap; /* responsive for smaller screens */
+  border-radius: 12px;
+}
+
+/* LEFT box (duration) */
+.information2 {
+  flex: 1;
+  min-width: 280px;
+  color: #000;
+  font-size: 22px;
+ 
+  display: flex;
+  flex-direction: column; /* stack text and button vertically */
+  align-items: center;
+}
+
+.information2 .first {
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
+  
+}
+.price {
+  background-color: #35be80;
+  color: #fff;
+  border-radius: 20px;
+  border: #000;
+  
+  padding: 8px 16px;
+  font-weight: bold;
+  font-size: 25px;
+  display: inline-block;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.information01{
+    flex: 1;
+  min-width: 280px;
+  color: #000;
+  font-size: 22px;
+ 
+  display: flex;
+  flex-direction: column; /* stack text and button vertically */
+  align-items: center;
+    font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
+  background-color: #f4f4f4;
+}
+
+.information2 .belowTheInformation {
+  margin-top: 15px; /* space between text and button */
+  
+}
+
+/* RIGHT box (fees) */
+.information3 {
+ flex: 1;
+  min-width: 280px;
+  color: #000;
+  font-size: 22px;
+ 
+  display: flex;
+  flex-direction: column; /* stack text and button vertically */
+  align-items: center;
+}
+
+.information3 .second {
+  font-weight: bold;
+  color: #000000;
+  margin-bottom: 10px;
+}
+
+.information3 .belowTheInformation {
+  margin-top: 15px;
+}
+
+/* Make both buttons consistent */
+.btn {
+  background-color: #35be80;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #2ca66f;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 900px) {
+  .section2 {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .information2,
+  .information3 {
+    width: 100%;
+  }
+}
+
+
+/* Buttons inside section2 */
+
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================== */
+
+
+
+
+
+
+
+
+
+
+/* Keep content responsive */
+@media (max-width: 900px) {
+  .calculator-section {
+    flex-direction: column;
+  }
+
+  .select_courses, .right-side {
+    width: 100%;
+  }
+}

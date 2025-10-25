@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,6 +8,21 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+            <script>
+function addToQuote(courseName) {
+  // Get existing selections from localStorage (or start a new list)
+  let selectedCourses = JSON.parse(localStorage.getItem("selectedCourses")) || [];
+
+  // Check if it's already added
+  if (!selectedCourses.includes(courseName)) {
+    selectedCourses.push(courseName);
+    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
+    alert(courseName + " has been added to your quote list!");
+  } else {
+    alert(courseName + " is already in your quote list.");
+  }
+}
+</script>
     <div id="wrapper">
         <header id="mainHeader">
             <div class="headerContent">
@@ -52,7 +68,7 @@
                         <li>Planting techniques for different plant types</li>
                     
                     <div class="button">
-                        <a href="contact.html" class="btn">Add To Quote</a>
+                        <button class="btn" onclick="addToQuote('Garden Maintenance')">Add To Quote</button>
                     </div>
                 </div>
                 <div class="imageNextToInormation">
@@ -70,8 +86,8 @@
                     </div>
                     </div>
                     
-                <div class="information3">
-                    <p class="second">Fees: R750</p>
+                <div class="information2">
+                    <p class="first">Fees: R750</p>
                 
                     <div class="belowTheInformation">
                         <a href="calculate_fees.html" class="btn">See Quote Page</a>
@@ -93,7 +109,7 @@
             </div>
             <div class="footerBottom">
                 <div class="footerColumn">
-                    <img src="_images/logo.png" width="50" height="50">
+                    <img src="_images/logo.png" width="25" height="25">
                     <p>Empowering the Nation</p>
                 </div>  
                

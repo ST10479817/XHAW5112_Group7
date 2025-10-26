@@ -519,15 +519,16 @@ ul li:hover ul.dropdown a:hover{
 .subheading{
     flex: 1;
   display: flex;
-  flex-direction: column-reverse;        
+  flex-direction: row;        
   gap: 50px;          
   margin-top: 30px; 
   padding: 0px 30px;
+  
 }
 .subheading3 {
     flex: 1;
   display: flex;
-  flex-direction: column;             
+  flex-direction:row;             
   gap: 50px;                 
   margin-top: 30px; 
   padding: 0px 30px;
@@ -561,6 +562,7 @@ ul li:hover ul.dropdown a:hover{
   border: 3px solid #35be80;
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 }
 .subheading2 img{
   display: block;
@@ -898,7 +900,7 @@ display: flex;
  
   display: flex;
   flex-direction: column; 
-  align-items: center;
+  
 }
 
 .information2 .first {
@@ -1246,7 +1248,8 @@ display: flex;
 
 .subheading{
   flex: 1;
-  display: flex;              
+  display: flex;
+  flex-direction: column-reverse;              
   gap: 20px;                  
   margin-top: 30px; 
   padding: 0px 0px;
@@ -1254,7 +1257,8 @@ display: flex;
 }
 .subheading3 {
   flex: 1;
-  display: flex;                
+  display: flex;
+  flex-direction: column;  
   gap: 20px;                   
   margin-top: 30px; 
   padding: 0px 0px;

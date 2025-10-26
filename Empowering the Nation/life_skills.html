@@ -1,127 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="description" content="Gain vital life skills including budgeting, debt management, and basic literacy. Our 6-month program covers bank accounts, job applications, and interview skills. R1500 fee. Clearly lists the practical, financial, and employment benefits.">
-<meta name="Keywords" content="life skills course, budgeting course, debt management, job application skills, interview skills, basic literacy, financial literacy, Targets users looking for practical, real-world skills training.">
-<title>Life skills | Empowering the nation</title>
-<link rel="stylesheet" href="styles.css">
-</head>
-<body>
-            <script>
-function addToQuote(courseName) {
-  // Get existing selections from localStorage (or start a new list)
-  let selectedCourses = JSON.parse(localStorage.getItem("selectedCourses")) || [];
 
-  // Check if it's already added
-  if (!selectedCourses.includes(courseName)) {
-    selectedCourses.push(courseName);
-    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
-    alert(courseName + " has been added to your quote list!");
-  } else {
-    alert(courseName + " is already in your quote list.");
-  }
-}
-</script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description"
+        content="Gain vital life skills including budgeting, debt management, and basic literacy. Our 6-month program covers bank accounts, job applications, and interview skills. R1500 fee. Clearly lists the practical, financial, and employment benefits.">
+    <meta name="Keywords"
+        content="life skills course, budgeting course, debt management, job application skills, interview skills, basic literacy, financial literacy, Targets users looking for practical, real-world skills training.">
+    <title>Life skills | Empowering the nation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
     <div id="wrapper">
         <header id="mainHeader">
             <div class="headerContent">
-                <!-- Company Logo --> 
-                <div id="logo">
+                <div class="logo3">
                     <img src="_images/logo2.png" alt="Housing Repairs Logo" width="150" height="150">
                 </div>
-                <!-- Navigation Bar -->
-                <div class="navBar">
-                    <ul>
-                        <li class="navigation_style" ><a href="index.html"><img src="_images/home_icon.png" alt="home_icon" class="icon">Home</a></li>
-                        
-        <li class="navigation_style" id="current_page">
-          <a href="#" ><img src="_images/book_icon.png" alt="Housing Repairs Logo" class="icon" >Services ▾</a>
-          <ul class="dropdown">
-            <li class="dropdown_style" id="current_page"><a href="6_month_courses.html">6-Month Courses</a></li>
-            <li class="dropdown_style" id="not_current_page"><a href="6_week_courses.html">6-Week Courses</a></li>
-          </ul>
-        </li>
+                <div class="mobile-only1">
+                    <p class="current_page05"><img src="_images/book_icon.png" class="icon">Life Skills</p>
 
-        
-
-
-                        <li class="navigation_style"><a href="calculate_fees.html"><img src="_images/calculator_icon.png" alt="Housing Repairs Logo" class="icon">Calculate Fees</a></li>
-                        <li class="navigation_style"><a href="contact.html"><img src="_images/phone_icon.png" alt="Housing Repairs Logo" class="icon" >Contact Us</a></li>    
-                    </ul>
                 </div>
+
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+
+                <!-- Navigation Bar -->
+
+                <nav class="nav-menu">
+                    <ul>
+                        <li class="navigation_style"><a href="index.html" class="nav-link"><img
+                                    src="_images/home_icon.png" class="icon"> Home</a></li>
+
+                        <li class="desktop-only" id="current_page">
+                            <a href="#" class="nav-link"><img src="_images/book_icon.png" class="icon"> Services ▾</a>
+                            <ul class="dropdown">
+                                <li id="current_page" class="dropdown_style"><a href="6_month_courses.html"
+                                        class="nav-link">6-Month Courses</a></li>
+                                <li class="dropdown_style" id="not_current_page"><a href="6_week_courses.html"
+                                        class="nav-link">6-Week Courses</a></li>
+                            </ul>
+                        </li>
+
+                        <li id="current_page" class="mobile-only"><a href="6_month_courses.html" class="nav-link"><img
+                                    src="_images/book_icon.png" class="icon"> 6-Month Courses</a></li>
+                        <li class="mobile-only"><a href="6_week_courses.html" class="nav-link"><img
+                                    src="_images/book_icon.png" class="icon"> 6-Week Courses</a></li>
+
+                        <li class="navigation_style"><a href="calculate_fees.html" class="nav-link"><img
+                                    src="_images/calculator_icon.png" class="icon"> Calculate Fees</a></li>
+                        <li class="navigation_style"><a href="contact.html" class="nav-link"><img
+                                    src="_images/phone_icon.png" class="icon"> Contact Us</a></li>
+                    </ul>
+                </nav>
+
             </div>
         </header>
         <main>
             <div class="heading2">
                 <h1>Life Skills</h1>
             </div>
+    </div>
+    <div class="section">
+
+        <div class="informationNextToImage">
+            <h2>Purpose</h2>
+            <p>To provide skills to navigate basic life necessities.</p>
+
+            <li>Opening a bank account</li>
+            <li>
+                Basic labour law (know your
+                rights)</li>
+            <li>
+                Basic reading and writing
+                literacy
+            </li>
+            <li>Basic numeric literacy</li>
+
+
+            <div class="button">
+                <button class="btn" onclick="addToQuote('Life Skills')">Add To Quote</button>
             </div>
-            <div class="section">
-                
-                <div class="informationNextToImage">
-                    <h2>Purpose</h2>
-                    <p>To provide skills to navigate basic life necessities.</p>
-                    
-                        <li>Opening a bank account</li>
-                        <li>
-Basic labour law (know your 
-   rights)</li>
-                        <li>
-Basic reading and writing 
-   literacy
-</li>
-                        <li>Basic numeric literacy</li>
-                        
-                    
-                    <div class="button">
-                        <button class="btn" onclick="addToQuote('Life Skills')">Add To Quote</button>
-                    </div>
-                </div>
-                <div class="imageNextToInormation">
-                    <img src="_images/life_skills.png" alt="Empowering the Nation">
-                </div>
+        </div>
+        <div class="imageNextToInormation">
+            <img src="_images/life_skills.png" alt="Empowering the Nation">
+        </div>
+    </div>
+    <div class="section2">
+        <div class="information2">
+            <div class="informationAboveButton">
+                <p class="first">6 months (12 weeks)</p>
+
             </div>
-            <div class="section2">
-                <div class="information2">
-                    <div class="informationAboveButton">
-                    <p class="first">6 months (12 weeks)</p>
-                    
-                </div>
-                    <div class="belowTheInformation">
-                        <a href="6_month_courses.html" class="btn">Back to Courses</a>
-                    </div>
-                    </div>
-                    
-                <div class="information2">
-                    <p class="first">Fees: R1500</p>
-                
-                    <div class="belowTheInformation">
-                        <a href="calculate_fees.html" class="btn">See Quote Page</a>
-                    </div>
+            <div class="belowTheInformation">
+                <a href="6_month_courses.html" class="btn">Back to Courses</a>
             </div>
-                    
-                
-                
+        </div>
+
+        <div class="information2">
+            <p class="first">Fees: R1500</p>
+
+            <div class="belowTheInformation">
+                <a href="calculate_fees.html" class="btn">See Quote Page</a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+    </main>
+    <!-- Footer -->
+    <footer id="mainFooter">
+        <div class="footerContainer">
+
+        </div>
+        <div class="footerBottom">
+            <div class="footerColumn">
+                <img src="_images/logo.png" width="25" height="25">
+                <p>Empowering the Nation</p>
             </div>
 
-            
-            
-                
-        </main>
-                <!-- Footer -->
-        <footer id="mainFooter">
-            <div class="footerContainer">
-                
-            </div>
-            <div class="footerBottom">
-                <div class="footerColumn">
-                    <img src="_images/logo.png" width="25" height="25">
-                    <p>Empowering the Nation</p>
-                </div>  
-               
-                <p>&copy; 2022-2025 Empowering the Nation. All rights reserved.</p>
-            </div>
-        </footer>
+            <p>&copy; 2022-2025 Empowering the Nation. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
+
 </html>

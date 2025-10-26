@@ -1,135 +1,159 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="description" content="Easily calculate your course fees at Empowering the Nation. Select from our 6-week or 6-month training programs and get an instant quote with available discounts for multiple courses.">
-<meta name="Keywords" content="calculate course fees, training program prices, course quote, Empowering the Nation, short courses South Africa, 6-week courses, 6-month courses, education discounts">
-<title>Calculate Fees | Empowering the nation</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="description"
+    content="Easily calculate your course fees at Empowering the Nation. Select from our 6-week or 6-month training programs and get an instant quote with available discounts for multiple courses.">
+  <meta name="Keywords"
+    content="calculate course fees, training program prices, course quote, Empowering the Nation, short courses South Africa, 6-week courses, 6-month courses, education discounts">
+  <title>Calculate Fees | Empowering the nation</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  
 
-
-        <!-- Wrapper to contain the whole page -->
-    <div id="wrapper">
-        <header id="mainHeader">
-            <div class="headerContent">
-                <!-- Company Logo --> 
-                <div id="logo">
-                    <img src="_images/logo2.png" alt="Housing Repairs Logo" width="150" height="150">
-                </div>
-                <!-- Navigation Bar -->
-                <div class="navBar">
-                    <ul>
-                        <li class="navigation_style" ><a href="index.html"><img src="_images/home_icon.png" alt="home_icon" class="icon">Home</a></li>
-                        
-        <li class="navigation_style">
-          <a href="#" ><img src="_images/book_icon.png" alt="Housing Repairs Logo" class="icon">Services ▾</a>
-          <ul class="dropdown">
-            <li class="dropdown_style"><a href="6_month_courses.html">6-Month Courses</a></li>
-            <li class="dropdown_style"><a href="6_week_courses.html">6-Week Courses</a></li>
-          </ul>
-        </li>
-
-        
-
-
-                        <li class="navigation_style" id="current_page"><a href="calculate_fees.html"><img src="_images/calculator_icon.png" alt="Housing Repairs Logo" class="icon">Calculate Fees</a></li>
-                        <li class="navigation_style"><a href="contact.html"><img src="_images/phone_icon.png" alt="Housing Repairs Logo" class="icon" >Contact Us</a></li>    
-                    </ul>
-                </div>
-            </div>
-        </header>
-
-
-        <main>
-  <div class="heading">
-    <h1>Calculate Course Fees</h1>
-  </div>
-
-  <div class="information01">
-    <p class="background_color">Select courses and get an instant quote.</p>
-  </div>
-
-  <!-- Calculator + Discount layout -->
-  <div class="calculator-section">
-    
-    <!-- Left: Course selection -->
-     <div class="right-side">
-    <div class="select_courses">
-      <h2>Select Courses:</h2>
-      <form id="courseForm">
-        <h2>6-Month Courses (R1500 each):</h2>
-        <label><input type="checkbox" name="course" value="First Aid" data-fee="1500"> First Aid R1500</label><br>
-        <label><input type="checkbox" name="course" value="Sewing" data-fee="1500"> Sewing R1500</label><br>
-        <label><input type="checkbox" name="course" value="Landscaping" data-fee="1500"> Landscaping R1500</label><br>
-        <label><input type="checkbox" name="course" value="Life Skills" data-fee="1500"> Life Skills R1500</label><br>
-
-        <h2>3-Month Courses (R750 each):</h2>
-        <label><input type="checkbox" name="course" value="Child Minding" data-fee="750"> Child Minding R750</label><br>
-        <label><input type="checkbox" name="course" value="Cooking" data-fee="750"> Cooking R750</label><br>
-        <label><input type="checkbox" name="course" value="Garden Maintenance" data-fee="750"> Garden Maintenance R750</label><br>
-        <div class="same_line">
-        <button type="button" class="calculate-btn" onclick="calculateTotal()">Calculate Total</button>
-        <button type="button" class="clear-btn" onclick="clearSelection()">Clear Selection</button>
+  <div id="wrapper">
+    <header id="mainHeader">
+      <div class="headerContent">
+        <div class="logo3">
+          <img src="_images/logo2.png" alt="Housing Repairs Logo" width="150" height="150">
         </div>
-      </form>
-    </div>
-      <div class="contact_info">
-  <h2>Contact Information</h2>
-  <form id="quoteForm">
-    <label for="fullName">Full Name:</label><br>
-    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required><br><br>
+        <div class="mobile-only1">
+          <p class="current_page05"><img src="_images/calculator_icon.png" alt="Housing Repairs Logo"
+              class="icon">Calculate Fees</p>
 
-    <label for="phone">Phone Number:</label><br>
-    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+        </div>
+        <div class="hamburger">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
 
-    <label for="email">Email Address:</label><br>
-    <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+        <!-- Navigation Bar -->
 
-    <button type="button" class="request-btn" onclick="requestQuote()">Request Quote</button>
-  </form>
-</div>
-</div>
+        <nav class="nav-menu">
+          <ul>
+            <li class="navigation_style"><a href="index.html" class="nav-link"><img src="_images/home_icon.png"
+                  class="icon"> Home</a></li>
+
+            <li class="desktop-only">
+              <a href="#" class="nav-link"><img src="_images/book_icon.png" class="icon"> Services ▾</a>
+              <ul class="dropdown">
+                <li class="dropdown_style"><a href="6_month_courses.html" class="nav-link">6-Month Courses</a></li>
+                <li class="dropdown_style"><a href="6_week_courses.html" class="nav-link">6-Week Courses</a></li>
+              </ul>
+            </li>
+
+            <li class="mobile-only"><a href="6_month_courses.html" class="nav-link"><img src="_images/book_icon.png"
+                  class="icon"> 6-Month Courses</a></li>
+            <li class="mobile-only"><a href="6_week_courses.html" class="nav-link"><img src="_images/book_icon.png"
+                  class="icon"> 6-Week Courses</a></li>
+
+            <li id="current_page" class="navigation_style"><a href="calculate_fees.html" class="nav-link"><img
+                  src="_images/calculator_icon.png" class="icon"> Calculate Fees</a></li>
+            <li class="navigation_style"><a href="contact.html" class="nav-link"><img src="_images/phone_icon.png"
+                  class="icon"> Contact Us</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
 
 
-    <!-- Right: Discounts + Quote -->
-    <div class="right-side">
-      <div class="Multi-Course-Discount">
-        <h2>Multi-Course Discount:</h2>
-        <p>The more courses you select, the more you save. Choose multiple courses to maximize your savings.</p>
-<div id="discountInfo">
-  <div id="oneCourse">1 Course<br>No discount</div>
-  <div id="twoCourses">2 Courses<br>5% OFF</div>
-  <div id="threeCourses">3 Courses<br>10% OFF</div>
-  <div id="fourCourses">4+ Courses<br>15% OFF</div>
-</div>
+    <main>
+      <div class="heading">
+        <h1>Calculate Course Fees</h1>
+      </div>
+
+      <div class="information01">
+        <p class="background_color">Select courses and get an instant quote.</p>
+      </div>
+
+      <!-- Calculator + Discount layout -->
+      <div class="calculator-section">
+
+        <!-- Left: Course selection -->
+        <div class="right-side">
+          <div class="select_courses">
+            <h2>Select Courses:</h2>
+            <form id="courseForm">
+              <h2>6-Month Courses (R1500 each):</h2>
+              <label><input type="checkbox" name="course" value="First Aid" data-fee="1500"> First Aid R1500</label><br>
+              <label><input type="checkbox" name="course" value="Sewing" data-fee="1500"> Sewing R1500</label><br>
+              <label><input type="checkbox" name="course" value="Landscaping" data-fee="1500"> Landscaping
+                R1500</label><br>
+              <label><input type="checkbox" name="course" value="Life Skills" data-fee="1500"> Life Skills
+                R1500</label><br>
+
+              <h2>3-Month Courses (R750 each):</h2>
+              <label><input type="checkbox" name="course" value="Child Minding" data-fee="750"> Child Minding
+                R750</label><br>
+              <label><input type="checkbox" name="course" value="Cooking" data-fee="750"> Cooking R750</label><br>
+              <label><input type="checkbox" name="course" value="Garden Maintenance" data-fee="750"> Garden Maintenance
+                R750</label><br>
+              <div class="same_line">
+                <button type="button" class="calculate-btn" onclick="calculateTotal()">Calculate Total</button>
+                <button type="button" class="clear-btn" onclick="clearSelection()">Clear Selection</button>
+              </div>
+            </form>
+          </div>
+          <div class="contact_info">
+            <h2>Contact Information</h2>
+            <form id="quoteForm">
+              <label for="fullName">Full Name:</label><br>
+              <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required><br><br>
+
+              <label for="phone">Phone Number:</label><br>
+              <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required><br><br>
+
+              <label for="email">Email Address:</label><br>
+              <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+
+              <button type="button" class="request-btn" onclick="requestQuote()">Request Quote</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="right-side">
+          <div class="Multi-Course-Discount">
+            <h2>Multi-Course Discount:</h2>
+            <p>The more courses you select, the more you save. Choose multiple courses to maximize your savings.</p>
+            <div id="discountInfo">
+              <div id="oneCourse">1 Course<br>No discount</div>
+              <div id="twoCourses">2 Courses<br>5% OFF</div>
+              <div id="threeCourses">3 Courses<br>10% OFF</div>
+              <div id="fourCourses">4+ Courses<br>15% OFF</div>
+            </div>
+
+          </div>
+
+          <div class="quote_summary">
+            <p>Please select courses to see pricing and press the <strong>Calculate</strong> button.</p>
+            <p>Select courses above to calculate fees.</p>
+          </div>
+        </div>
 
       </div>
 
-      <div class="quote_summary"><p>Please select courses to see pricing and press the <strong>Calculate</strong> button.</p>
-  <p>Select courses above to calculate fees.</p></div>
-    </div>
 
-  </div> <!-- End calculator-section -->
+    </main>
+    <footer id="mainFooter">
+      <div class="footerContainer">
 
+      </div>
+      <div class="footerBottom">
+        <div class="footerColumn">
+          <img src="_images/logo.png" width="25" height="25">
+          <p>Empowering the Nation</p>
+        </div>
 
-</main>
-        <footer id="mainFooter">
-            <div class="footerContainer">
-                
-            </div>
-            <div class="footerBottom">
-                <div class="footerColumn">
-                    <img src="_images/logo.png" width="25" height="25">
-                    <p>Empowering the Nation</p>
-                </div>  
-               
-                <p>&copy; 2022-2025 Empowering the Nation. All rights reserved.</p>
-            </div>
-        </footer>
+        <p>&copy; 2022-2025 Empowering the Nation. All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
 
-        <script src="scripts.js"></script>
+  <script src="scripts.js"></script>
 </body>
+
 </html>

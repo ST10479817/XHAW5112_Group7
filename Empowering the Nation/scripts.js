@@ -1,4 +1,20 @@
-    
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav-link").forEach(link => 
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    })
+  ); 
+ 
+
+
 window.onload = function() {
   const savedCourses = JSON.parse(localStorage.getItem("selectedCourses")) || [];
   savedCourses.forEach(courseName => {
@@ -93,4 +109,19 @@ function requestQuote() {
     
     // Optionally clear inputs
     document.getElementById('quoteForm').reset();
+}
+
+
+function addToQuote(courseName) {
+  // Get existing selections from localStorage (or start a new list)
+  let selectedCourses = JSON.parse(localStorage.getItem("selectedCourses")) || [];
+
+  // Check if it's already added
+  if (!selectedCourses.includes(courseName)) {
+    selectedCourses.push(courseName);
+    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
+    alert(courseName + " has been added to your quote list!");
+  } else {
+    alert(courseName + " is already in your quote list.");
+  }
 }

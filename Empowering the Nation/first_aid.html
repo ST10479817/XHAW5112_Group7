@@ -8,50 +8,50 @@
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-function addToQuote(courseName) {
-  // Get existing selections from localStorage (or start a new list)
-  let selectedCourses = JSON.parse(localStorage.getItem("selectedCourses")) || [];
 
-  // Check if it's already added
-  if (!selectedCourses.includes(courseName)) {
-    selectedCourses.push(courseName);
-    localStorage.setItem("selectedCourses", JSON.stringify(selectedCourses));
-    alert(courseName + " has been added to your quote list!");
-  } else {
-    alert(courseName + " is already in your quote list.");
-  }
-}
-</script>
     <div id="wrapper">
-        <header id="mainHeader">
-            <div class="headerContent">
-                <!-- Company Logo --> 
-                <div id="logo">
-                    <img src="_images/logo2.png" alt="Housing Repairs Logo" width="150" height="150">
-                </div>
-                <!-- Navigation Bar -->
-                <div class="navBar">
-                    <ul>
-                        <li class="navigation_style" ><a href="index.html"><img src="_images/home_icon.png" alt="home_icon" class="icon">Home</a></li>
-                        
-        <li class="navigation_style" id="current_page">
-          <a href="#" ><img src="_images/book_icon.png" alt="Housing Repairs Logo" class="icon" >Services ▾</a>
-          <ul class="dropdown">
-            <li class="dropdown_style" id="current_page"><a href="6_month_courses.html">6-Month Courses</a></li>
-            <li class="dropdown_style" id="not_current_page"><a href="6_week_courses.html">6-Week Courses</a></li>
-          </ul>
-        </li>
+                <header id="mainHeader">
+  <div class="headerContent">
+ 
+    <div class="logo3">
+      <img src="_images/logo2.png" alt="Housing Repairs Logo" width="150" height="150">
+    </div>
+    <div class="mobile-only1">
+        <p class="current_page05"><img src="_images/book_icon.png" class="icon">First Aid</p>
 
-        
+    </div>
 
+   
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
 
-                        <li class="navigation_style"><a href="calculate_fees.html"><img src="_images/calculator_icon.png" alt="Housing Repairs Logo" class="icon">Calculate Fees</a></li>
-                        <li class="navigation_style"><a href="contact.html"><img src="_images/phone_icon.png" alt="Housing Repairs Logo" class="icon" >Contact Us</a></li>    
-                    </ul>
-                </div>
-            </div>
-        </header>
+    <!-- Navigation Bar -->
+     
+<nav class="nav-menu">
+  <ul>
+    <li  class="navigation_style"><a href="index.html" class="nav-link"><img src="_images/home_icon.png" class="icon"> Home</a></li>
+
+    <li class="desktop-only" id="current_page">
+      <a href="#" class="nav-link" ><img src="_images/book_icon.png" class="icon"> Services ▾</a>
+      <ul class="dropdown">
+        <li id="current_page" class="dropdown_style"><a href="6_month_courses.html" class="nav-link">6-Month Courses</a></li>
+        <li class="dropdown_style"id="not_current_page"><a href="6_week_courses.html" class="nav-link">6-Week Courses</a></li>
+      </ul>
+    </li>
+
+    <li id="current_page" class="mobile-only"><a href="6_month_courses.html" class="nav-link"><img src="_images/book_icon.png" class="icon"> 6-Month Courses</a></li>
+    <li class="mobile-only"><a href="6_week_courses.html" class="nav-link"><img src="_images/book_icon.png" class="icon"> 6-Week Courses</a></li>
+
+    <li  class="navigation_style"><a href="calculate_fees.html" class="nav-link"><img src="_images/calculator_icon.png" class="icon"> Calculate Fees</a></li>
+    <li  class="navigation_style"><a href="contact.html" class="nav-link"><img src="_images/phone_icon.png" class="icon"> Contact Us</a></li>
+  </ul>
+</nav>
+
+  </div>
+</header>
         <main>
             <div class="heading2">
                 <h1>First Aid</h1>
@@ -119,6 +119,6 @@ function addToQuote(courseName) {
                 <p>&copy; 2022-2025 Empowering the Nation. All rights reserved.</p>
             </div>
         </footer>
-    
+    <script src="scripts.js"></script>
 </body>
 </html>
